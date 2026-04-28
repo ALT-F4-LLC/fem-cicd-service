@@ -5,6 +5,10 @@ on:
     branches:
       - "feature/main"
 
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   build:
     uses: ./.github/workflows/_build.yaml
