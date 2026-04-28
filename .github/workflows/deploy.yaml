@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/_build.yml
+    uses: ./.github/workflows/_build.yaml
 
   deploy:
     runs-on: ubuntu-latest
