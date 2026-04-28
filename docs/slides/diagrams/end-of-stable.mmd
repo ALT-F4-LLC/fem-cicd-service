@@ -1,9 +1,0 @@
-flowchart LR
-    PR["pull_request"] --> CI["ci.yml<br/>uses _build.yml"]
-    Push["push: main"] --> Deploy["deploy.yml<br/>build job uses _build.yml<br/>deploy job aws s3 sync"]
-    CI -. required check .-> MainBranch[("main protected")]
-    MainBranch --> Push
-    Deploy --> S3[("S3 bucket<br/>public-read")]
-    CI -.-> Reusable["_build.yml"]
-    Deploy -.-> Reusable
-    Reusable -.-> Composite["build-astro composite"]

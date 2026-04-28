@@ -1,4 +1,0 @@
-flowchart LR
-    Push["push to main"] --> Build["build job<br/>checkout + setup-node<br/>npm ci + npm run build<br/>upload-artifact"]
-    Build --> Deploy["deploy job<br/>download-artifact<br/>configure-aws-credentials (IAM key)<br/>aws s3 sync"]
-    Deploy --> S3[("S3 bucket<br/>public-read")]
