@@ -1,0 +1,9 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    uses: ./.github/workflows/_build.yml
